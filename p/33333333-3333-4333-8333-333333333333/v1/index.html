@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; media-src data: blob:; font-src 'none'; worker-src 'none'; frame-src 'self' about:; object-src 'none'; form-action 'none'; base-uri 'none'"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Program 33333333</title>
+<style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:#f7f7fc;color:#282538;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{display:flex;flex-direction:column}.project-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;border-bottom:1px solid #e3e1ec;background:#fff}.project-header h1{margin:0;font-size:14px;line-height:1.4}.project-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#716b85}.project-version{font-size:12px;color:#777082}iframe{display:block;border:0;width:100%;flex:1;min-height:420px;background:#fff}footer{padding:7px 20px;font-size:11px;color:#777082;border-top:1px solid #e3e1ec}@media(max-width:520px){.project-header{padding:10px 12px}.project-version{display:none}footer{padding:7px 12px}}</style></head>
+<body><header class="project-header"><div><div class="project-label">Classroom creation</div><h1>Program 33333333</h1></div><span class="project-version">33333333-3333-4333-8333-333333333333 · v1</span></header>
+<iframe id="program-frame" data-testid="program-frame" title="Program 33333333" sandbox="allow-scripts" referrerpolicy="no-referrer" allow="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'; usb 'none'; serial 'none'; clipboard-read 'none'; clipboard-write 'none'" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#39;none&#39;; script-src &#39;unsafe-inline&#39;; style-src &#39;unsafe-inline&#39;; img-src data: blob:; connect-src &#39;none&#39;; media-src data: blob:; font-src &#39;none&#39;; worker-src &#39;none&#39;; frame-src &#39;none&#39;; object-src &#39;none&#39;; form-action &#39;none&#39;; base-uri &#39;none&#39;&quot;&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Three Color Studio&lt;/title&gt;
+  &lt;style&gt;
+    :root {
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --border-color: #d1d5db;
+      --focus-ring: #2563eb;
+      
+      --color-red: #dc2626;
+      --color-blue: #2563eb;
+      --color-green: #16a34a;
+      
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 800px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .instructions {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background-color: #f9fafb;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      line-height: 1.4;
+    }
+
+    .status-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 0.25rem;
+    }
+
+    .selected-color-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+      background-color: #ffffff;
+    }
+
+    .color-swatch-indicator {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--color-red);
+    }
+
+    .canvas-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background-color: #ffffff;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* Color Buttons */
+    .btn-color {
+      color: #ffffff;
+      background-color: var(--btn-bg);
+      border-color: var(--btn-bg);
+      opacity: 0.8;
+    }
+
+    .btn-color:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-color.active {
+      opacity: 1;
+      border-color: #111827;
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #111827;
+    }
+
+    .btn-red { --btn-bg: var(--color-red); }
+    .btn-blue { --btn-bg: var(--color-blue); }
+    .btn-green { --btn-bg: var(--color-green); }
+
+    /* Action Buttons */
+    .btn-action {
+      background-color: #ffffff;
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-action:hover {
+      background-color: #f3f4f6;
+      border-color: #9ca3af;
+    }
+
+    .btn-action:active {
+      background-color: #e5e7eb;
+    }
+
+    /* Notification box for accessibility/keyboard info */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .app-container {
+        padding: 1rem;
+      }
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .button-group {
+        justify-content: center;
+      }
+      .canvas-wrapper {
+        height: 300px;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;main class=&quot;app-container&quot;&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Three Color Studio&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;instructions&quot; aria-label=&quot;Usage Instructions&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt; Click or touch and drag on the canvas to draw. Select a color button or use keyboard shortcuts (&lt;strong&gt;1&lt;/strong&gt; for Red, &lt;strong&gt;2&lt;/strong&gt; for Blue, &lt;strong&gt;3&lt;/strong&gt; for Green). Press &lt;strong&gt;C&lt;/strong&gt; to Clear the drawing, or &lt;strong&gt;R&lt;/strong&gt; to Reset all settings.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;div class=&quot;status-panel&quot;&gt;
+      &lt;span&gt;Status: &lt;span id=&quot;status-text&quot;&gt;Ready to draw&lt;/span&gt;&lt;/span&gt;
+      &lt;div class=&quot;selected-color-badge&quot; aria-live=&quot;polite&quot;&gt;
+        &lt;span&gt;Selected Color:&lt;/span&gt;
+        &lt;span id=&quot;color-name&quot;&gt;Red&lt;/span&gt;
+        &lt;div id=&quot;color-swatch&quot; class=&quot;color-swatch-indicator&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;canvas-wrapper&quot;&gt;
+      &lt;canvas id=&quot;drawing-canvas&quot; aria-label=&quot;Drawing Canvas&quot; role=&quot;img&quot; tabindex=&quot;0&quot;&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;toolbar&quot; role=&quot;toolbar&quot; aria-label=&quot;Drawing Controls&quot;&gt;
+      &lt;div class=&quot;button-group&quot; role=&quot;radiogroup&quot; aria-label=&quot;Color Selection&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-color btn-red active&quot; data-color=&quot;#dc2626&quot; data-name=&quot;Red&quot; id=&quot;btn-red&quot; aria-checked=&quot;true&quot; role=&quot;radio&quot;&gt;
+          Red (1)
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-color btn-blue&quot; data-color=&quot;#2563eb&quot; data-name=&quot;Blue&quot; id=&quot;btn-blue&quot; aria-checked=&quot;false&quot; role=&quot;radio&quot;&gt;
+          Blue (2)
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-color btn-green&quot; data-color=&quot;#16a34a&quot; data-name=&quot;Green&quot; id=&quot;btn-green&quot; aria-checked=&quot;false&quot; role=&quot;radio&quot;&gt;
+          Green (3)
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;button-group&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-action&quot; id=&quot;btn-clear&quot; title=&quot;Clear canvas content&quot;&gt;
+          Clear (C)
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-action&quot; id=&quot;btn-reset&quot; title=&quot;Reset canvas and settings&quot;&gt;
+          Reset (R)
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;script&gt;
+    (function () {
+      // Color Palette Definition
+      const COLORS = {
+        RED: { code: &#39;#dc2626&#39;, name: &#39;Red&#39; },
+        BLUE: { code: &#39;#2563eb&#39;, name: &#39;Blue&#39; },
+        GREEN: { code: &#39;#16a34a&#39;, name: &#39;Green&#39; }
+      };
+
+      // Default State
+      const DEFAULT_COLOR = COLORS.RED;
+      let currentColor = DEFAULT_COLOR.code;
+      let currentColorName = DEFAULT_COLOR.name;
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+
+      // DOM Elements
+      const canvas = document.getElementById(&#39;drawing-canvas&#39;);
+      const ctx = canvas.getContext(&#39;2d&#39;);
+      const colorNameEl = document.getElementById(&#39;color-name&#39;);
+      const colorSwatchEl = document.getElementById(&#39;color-swatch&#39;);
+      const statusTextEl = document.getElementById(&#39;status-text&#39;);
+      
+      const btnRed = document.getElementById(&#39;btn-red&#39;);
+      const btnBlue = document.getElementById(&#39;btn-blue&#39;);
+      const btnGreen = document.getElementById(&#39;btn-green&#39;);
+      const btnClear = document.getElementById(&#39;btn-clear&#39;);
+      const btnReset = document.getElementById(&#39;btn-reset&#39;);
+      const colorButtons = [btnRed, btnBlue, btnGreen];
+
+      // Resize canvas to fit display container with crisp high-DPI resolution
+      function setupCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+
+        // Save canvas image data before resizing if canvas is drawn on
+        const tempCanvas = document.createElement(&#39;canvas&#39;);
+        const tempCtx = tempCanvas.getContext(&#39;2d&#39;);
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+        if (canvas.width &gt; 0 &amp;&amp; canvas.height &gt; 0) {
+          tempCtx.drawImage(canvas, 0, 0);
+        }
+
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        ctx.scale(dpr, dpr);
+        ctx.lineCap = &#39;round&#39;;
+        ctx.lineJoin = &#39;round&#39;;
+        ctx.lineWidth = 5;
+
+        // Restore image data after scale
+        if (tempCanvas.width &gt; 0 &amp;&amp; tempCanvas.height &gt; 0) {
+          ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width / dpr, tempCanvas.height / dpr);
+        }
+      }
+
+      // Update Selected Color in UI &amp; State
+      function setColor(colorCode, colorName, selectedBtn) {
+        currentColor = colorCode;
+        currentColorName = colorName;
+
+        // UI Updates
+        colorNameEl.textContent = colorName;
+        colorSwatchEl.style.backgroundColor = colorCode;
+        statusTextEl.textContent = `Color set to ${colorName}`;
+
+        colorButtons.forEach(btn =&gt; {
+          const isActive = btn === selectedBtn;
+          btn.classList.toggle(&#39;active&#39;, isActive);
+          btn.setAttribute(&#39;aria-checked&#39;, isActive ? &#39;true&#39; : &#39;false&#39;);
+        });
+      }
+
+      // Get pointer coordinates relative to canvas
+      function getCoordinates(event) {
+        const rect = canvas.getBoundingClientRect();
+        let clientX, clientY;
+
+        if (event.touches &amp;&amp; event.touches.length &gt; 0) {
+          clientX = event.touches[0].clientX;
+          clientY = event.touches[0].clientY;
+        } else {
+          clientX = event.clientX;
+          clientY = event.clientY;
+        }
+
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        };
+      }
+
+      // Drawing Actions
+      function startDrawing(e) {
+        isDrawing = true;
+        const coords = getCoordinates(e);
+        lastX = coords.x;
+        lastY = coords.y;
+        
+        // Draw a single dot on initial click/tap
+        ctx.beginPath();
+        ctx.arc(lastX, lastY, ctx.lineWidth / 2, 0, Math.PI * 2);
+        ctx.fillStyle = currentColor;
+        ctx.fill();
+
+        statusTextEl.textContent = &#39;Drawing...&#39;;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        e.preventDefault(); // Prevent scrolling on touch screens
+
+        const coords = getCoordinates(e);
+
+        ctx.beginPath();
+        ctx.strokeStyle = currentColor;
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+
+        lastX = coords.x;
+        lastY = coords.y;
+      }
+
+      function stopDrawing() {
+        if (isDrawing) {
+          isDrawing = false;
+          statusTextEl.textContent = &#39;Ready to draw&#39;;
+        }
+      }
+
+      // Clear Canvas contents
+      function clearCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        ctx.clearRect(0, 0, rect.width, rect.height);
+        statusTextEl.textContent = &#39;Canvas cleared&#39;;
+      }
+
+      // Reset Canvas and state back to default
+      function resetStudio() {
+        clearCanvas();
+        setColor(DEFAULT_COLOR.code, DEFAULT_COLOR.name, btnRed);
+        statusTextEl.textContent = &#39;Studio reset to default&#39;;
+      }
+
+      // Keyboard Shortcuts Listener
+      function handleKeyDown(e) {
+        // Avoid triggered shortcuts when typing in unexpected form inputs if present
+        if ([&#39;INPUT&#39;, &#39;TEXTAREA&#39;].includes(document.activeElement.tagName)) return;
+
+        const key = e.key.toLowerCase();
+
+        switch (key) {
+          case &#39;1&#39;:
+            setColor(COLORS.RED.code, COLORS.RED.name, btnRed);
+            break;
+          case &#39;2&#39;:
+            setColor(COLORS.BLUE.code, COLORS.BLUE.name, btnBlue);
+            break;
+          case &#39;3&#39;:
+            setColor(COLORS.GREEN.code, COLORS.GREEN.name, btnGreen);
+            break;
+          case &#39;c&#39;:
+            clearCanvas();
+            break;
+          case &#39;r&#39;:
+            resetStudio();
+            break;
+        }
+      }
+
+      // Attach Event Listeners
+      function initEvents() {
+        // Mouse events
+        canvas.addEventListener(&#39;mousedown&#39;, startDrawing);
+        canvas.addEventListener(&#39;mousemove&#39;, draw);
+        window.addEventListener(&#39;mouseup&#39;, stopDrawing);
+
+        // Touch events
+        canvas.addEventListener(&#39;touchstart&#39;, (e) =&gt; {
+          startDrawing(e);
+        }, { passive: false });
+        canvas.addEventListener(&#39;touchmove&#39;, draw, { passive: false });
+        canvas.addEventListener(&#39;touchend&#39;, stopDrawing);
+        canvas.addEventListener(&#39;touchcancel&#39;, stopDrawing);
+
+        // Button Click handlers
+        btnRed.addEventListener(&#39;click&#39;, () =&gt; setColor(COLORS.RED.code, COLORS.RED.name, btnRed));
+        btnBlue.addEventListener(&#39;click&#39;, () =&gt; setColor(COLORS.BLUE.code, COLORS.BLUE.name, btnBlue));
+        btnGreen.addEventListener(&#39;click&#39;, () =&gt; setColor(COLORS.GREEN.code, COLORS.GREEN.name, btnGreen));
+        btnClear.addEventListener(&#39;click&#39;, clearCanvas);
+        btnReset.addEventListener(&#39;click&#39;, resetStudio);
+
+        // Global Keyboard Shortcuts
+        window.addEventListener(&#39;keydown&#39;, handleKeyDown);
+
+        // Window resize adjustment
+        window.addEventListener(&#39;resize&#39;, setupCanvas);
+      }
+
+      // Initialize App
+      window.onload = function () {
+        setupCanvas();
+        initEvents();
+        setColor(DEFAULT_COLOR.code, DEFAULT_COLOR.name, btnRed);
+      };
+    })();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+<footer>AI-generated classroom project. Ask your teacher if something seems wrong.</footer></body></html>
