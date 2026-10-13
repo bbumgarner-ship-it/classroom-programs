@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professor Pressure - Classroom Management</title>
+<style>
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #1e1b18;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  #game-container {
+    position: relative;
+    width: 900px;
+    height: 620px;
+    background: #c29a64;
+    border: 8px solid #3e2723;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* HUD */
+  #hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(30, 20, 10, 0.85) 0%, rgba(30, 20, 10, 0) 100%);
+    pointer-events: none;
+  }
+
+  .hud-card {
+    background: rgba(0,0,0,0.65);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bar-container {
+    width: 320px;
+    height: 20px;
+    background: #2b1810;
+    border-radius: 10px;
+    border: 2px solid #ecd5b9;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #lesson-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff9800, #4caf50);
+    transition: width 0.1s linear;
+  }
+
+  .hud-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffcc80;
+    font-weight: bold;
+  }
+
+  .status-badge {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Overlay UI */
+  .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    padding: 30px;
+  }
+
+  .modal-overlay h1 {
+    font-size: 42px;
+    color: #ffca28;
+    text-shadow: 2px 2px 0 #3e2723;
+    margin-bottom: 12px;
+  }
+
+  .modal-overlay p {
+    font-size: 16px;
+    max-width: 580px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 24px;
+  }
+
+  .key-pill {
+    background: #3e2723;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #ffcc80;
+    font-family: monospace;
+    font-weight: bold;
+  }
+
+  .btn {
+    background: #4caf50;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #2e7d32;
+    transition: all 0.1s ease;
+  }
+  .btn:hover { background: #43a047; }
+  .btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #2e7d32;
+  }
+
+  #instructions-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #fff;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<div id="game-container">
+  <canvas id="gameCanvas" width="900" height="620"></canvas>
+
+  <div id="hud">
+    <div class="hud-card">
+      <div class="hud-title">Lesson Completion</div>
+      <div class="bar-container">
+        <div id="lesson-bar"></div>
+      </div>
+    </div>
+    
+    <div class="hud-card">
+      <div class="hud-title">Class Disruptions</div>
+      <div id="disruption-count" class="status-badge" style="color: #4caf50;">0 Active (Max Window)</div>
+    </div>
+
+    <div class="hud-card">
+      <div class="hud-title">Time Elapsed</div>
+      <div id="timer-display" class="status-badge" style="color: #fff;">00:00</div>
+    </div>
+  </div>
+
+  <div id="instructions-bar">
+    <span class="key-pill">WASD</span> or <span class="key-pill">Arrows</span> to Move | Walk to Board to Teach | Hit <span class="key-pill">SPACE</span> on target | Walk to students to discipline
+  </div>
+
+  <!-- Start Screen -->
+  <div id="start-screen" class="modal-overlay">
+    <h1>PROFESSOR PRESSURE</h1>
+    <p>
+      Your goal is to fill the <b>Lesson Bar</b> by teaching at the front blackboard.<br><br>
+      Time your <span class="key-pill">SPACEBAR</span> taps when the cursor is in the chalk target window.<br><br>
+      ⚠️ <b>Students will start misbehaving!</b> Each misbehaving student dramatically <b>shrinks your QTE hit window</b> and speeds it up.<br>
+      🏃 Walk over to desks to discipline them, but hurry: <b>the lesson bar drains while you are away from the chalkboard!</b>
+    </p>
+    <button class="btn" id="start-btn">Start Class Period</button>
+  </div>
+
+  <!-- End Screen -->
+  <div id="end-screen" class="modal-overlay" style="display: none;">
+    <h1 id="end-title">Lesson Completed!</h1>
+    <p id="end-desc">You kept the students in line and finished the curriculum!</p>
+    <button class="btn" id="restart-btn">Teach Another Period</button>
+  </div>
+</div>
+
+<script>
+// --- AUDIO SYSTEM (Web Audio API Synthesizer) ---
+class SoundController {
+  constructor() {
+    this.ctx = null;
+  }
+  init() {
+    if (!this.ctx) {
+      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+  playChalkHit() {
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(440, this.ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.08);
+    gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.08);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.08);
+  }
+  playQTEFail() {
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(160, this.ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(90, this.ctx.currentTime + 0.15);
+    gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.15);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.15);
+  }
+  playDiscipline() {
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(300, this.ctx.currentTime + 0.12);
+    gain.gain.setValueAtTime(0.3, this.ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.12);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.12);
+  }
+  playDisruptionAlert() {
+    if (!this.ctx) return;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(300, this.ctx.currentTime);
+    osc.frequency.setValueAtTime(450, this.ctx.currentTime + 0.07);
+    gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.18);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.18);
+  }
+  playBell() {
+    if (!this.ctx) return;
+    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const startTime = this.ctx.currentTime + i * 0.15;
+      gain.gain.setValueAtTime(0.25, startTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 1.2);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(startTime);
+      osc.stop(startTime + 1.2);
+    });
+  }
+}
+
+const sounds = new SoundController();
+
+// --- GAME CONFIG & CONSTANTS ---
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const BOARD_ZONE = { x: 260, y: 70, w: 380, h: 70 };
+const DRAIN_RATE = 2.4; // % lost per second away from podium
+const WIN_PROGRESS = 100;
+
+let gameState = 'START'; // START, PLAYING, GAMEOVER
+let lessonProgress = 0;
+let gameTime = 0;
+let activeDisruptions = 0;
+
+// Teacher State
+const teacher = {
+  x: 450,
+  y: 110,
+  radius: 20,
+  speed: 210,
+  vx: 0,
+  vy: 0,
+  direction: 'down',
+  isAtBoard: true,
+  actionAnim: 0
+};
+
+// Students Array (6 Desks: 2 Rows of 3)
+const students = [];
+const studentNames = ["Leo", "Maya", "Sam", "Chloe", "Jack", "Zoe"];
+const deskPositions = [
+  { x: 220, y: 270 }, { x: 450, y: 270 }, { x: 680, y: 270 },
+  { x: 220, y: 440 }, { x: 450, y: 440 }, { x: 680, y: 440 }
+];
+
+deskPositions.forEach((pos, idx) => {
+  students.push({
+    id: idx,
+    name: studentNames[idx],
+    x: pos.x,
+    y: pos.y,
+    width: 90,
+    height: 60,
+    state: 'attentive', // 'attentive', 'disruptive', 'disciplined'
+    disruptionType: null, // 'airplane', 'phone', 'talking', 'sleeping'
+    timer: 3 + Math.random() * 5, // time until next acting out
+    disciplinedTimer: 0,
+    animFrame: 0,
+    hairColor: ['#5d4037', '#e65100', '#212121', '#fbc02d', '#795548', '#8d6e63'][idx]
+  });
+});
+
+// Paper Airplanes Particle System
+let paperPlanes = [];
+
+// Floating Text Feedback System
+let floatingTexts = [];
+function addFloatingText(text, x, y, color = '#fff') {
+  floatingTexts.push({ text, x, y, color, life: 1.0, vy: -35 });
+}
+
+// Quick Time Event (QTE) Engine
+const qte = {
+  cursor: 0.5,       // 0 to 1
+  speed: 0.8,        // oscillation frequency
+  dir: 1,
+  targetCenter: 0.5,
+  targetWidth: 0.32, // base window (shrinks with troublemakers)
+  hitCooldown: 0,
+  combo: 0
+};
+
+// Input Handling
+const keys = {};
+window.addEventListener('keydown', (e) => {
+  keys[e.key.toLowerCase()] = true;
+
+  if (e.code === 'Space') {
+    e.preventDefault();
+    handleSpacePress();
+  }
+});
+window.addEventListener('keyup', (e) => {
+  keys[e.key.toLowerCase()] = false;
+});
+
+// Mouse/Click navigation support
+canvas.addEventListener('mousedown', (e) => {
+  sounds.init();
+  const rect = canvas.getBoundingClientRect();
+  const clickX = (e.clientX - rect.left) * (canvas.width / rect.width);
+  const clickY = (e.clientY - rect.top) * (canvas.height / rect.height);
+  
+  // If click near a student, walk towards them
+  teacher.targetX = clickX;
+  teacher.targetY = clickY;
+});
+
+function handleSpacePress() {
+  if (gameState !== 'PLAYING') return;
+
+  if (teacher.isAtBoard) {
+    // Check QTE
+    const minTarget = qte.targetCenter - qte.targetWidth / 2;
+    const maxTarget = qte.targetCenter + qte.targetWidth / 2;
+
+    if (qte.cursor >= minTarget && qte.cursor <= maxTarget) {
+      // SUCCESS!
+      qte.combo++;
+      const gain = 4.5 + Math.min(qte.combo * 0.5, 3.0);
+      lessonProgress = Math.min(WIN_PROGRESS, lessonProgress + gain);
+      sounds.playChalkHit();
+      addFloatingText(`+${gain.toFixed(0)}% Insight!`, teacher.x, teacher.y - 45, '#69f0ae');
+      teacher.actionAnim = 0.2;
+      // Reposition target area to keep player on toes
+      qte.targetCenter = 0.25 + Math.random() * 0.5;
+    } else {
+      // MISS
+      qte.combo = 0;
+      lessonProgress = Math.max(0, lessonProgress - 2.5);
+      sounds.playQTEFail();
+      addFloatingText('Slipped!', teacher.x, teacher.y - 45, '#ff5252');
+      teacher.actionAnim = 0.3;
+    }
+  } else {
+    // Try to discipline nearby student manually with space if close
+    interactNearbyStudent();
+  }
+}
+
+function interactNearbyStudent() {
+  students.forEach(s => {
+    const dist = Math.hypot(teacher.x - (s.x + s.width / 2), teacher.y - (s.y + s.height / 2));
+    if (dist < 75 && s.state === 'disruptive') {
+      calmStudent(s);
+    }
+  });
+}
+
+function calmStudent(student) {
+  student.state = 'disciplined';
+  student.disciplinedTimer = 2.0; // peace for 2 seconds
+  student.timer = 5.0 + Math.random() * 6.0; // won't act out for awhile
+  sounds.playDiscipline();
+  addFloatingText('Shh! Focus!', student.x + 30, student.y - 15, '#ffeb3b');
+}
+
+// --- UPDATE LOOP ---
+let lastTime = performance.now();
+
+function update(dt) {
+  if (gameState !== 'PLAYING') return;
+
+  gameTime += dt;
+
+  // 1. Teacher Movement
+  let mx = 0;
+  let my = 0;
+  if (keys['arrowleft'] || keys['a']) mx -= 1;
+  if (keys['arrowright'] || keys['d']) mx += 1;
+  if (keys['arrowup'] || keys['w']) my -= 1;
+  if (keys['arrowdown'] || keys['s']) my += 1;
+
+  if (mx !== 0 || my !== 0) {
+    const len = Math.hypot(mx, my);
+    teacher.x += (mx / len) * teacher.speed * dt;
+    teacher.y += (my / len) * teacher.speed * dt;
+    teacher.targetX = null; // keyboard cancels mouse target
+  } else if (teacher.targetX !== null && teacher.targetX !== undefined) {
+    // Smooth move to click
+    const dx = teacher.targetX - teacher.x;
+    const dy = teacher.targetY - teacher.y;
+    const dist = Math.hypot(dx, dy);
+    if (dist > 5) {
+      teacher.x += (dx / dist) * teacher.speed * dt;
+      teacher.y += (dy / dist) * teacher.speed * dt;
+    } else {
+      teacher.targetX = null;
+    }
+  }
+
+  // Constrain Teacher to classroom boundaries
+  teacher.x = Math.max(40, Math.min(canvas.width - 40, teacher.x));
+  teacher.y = Math.max(90, Math.min(canvas.height - 40, teacher.y));
+
+  // Determine if Teacher is at the Chalkboard zone
+  teacher.isAtBoard = (
+    teacher.x >= BOARD_ZONE.x &&
+    teacher.x <= BOARD_ZONE.x + BOARD_ZONE.w &&
+    teacher.y >= BOARD_ZONE.y &&
+    teacher.y <= BOARD_ZONE.y + BOARD_ZONE.h
+  );
+
+  // 2. Lesson Drainage vs Active Teaching
+  if (!teacher.isAtBoard) {
+    lessonProgress = Math.max(0, lessonProgress - DRAIN_RATE * dt);
+    qte.combo = 0;
+  }
+
+  // 3. Students AI & Disruptions
+  activeDisruptions = 0;
+  const types = ['airplane', 'phone', 'talking', 'sleeping'];
+
+  students.forEach(s => {
+    if (s.state === 'disciplined') {
+      s.disciplinedTimer -= dt;
+      if (s.disciplinedTimer <= 0) s.state = 'attentive';
+    } else if (s.state === 'disruptive') {
+      activeDisruptions++;
+      // Auto-discipline if teacher is close
+      const dist = Math.hypot(teacher.x - (s.x + s.width / 2), teacher.y - (s.y + s.height / 2));
+      if (dist < 65) {
+        calmStudent(s);
+      }
+      // Paper airplane spawn
+      if (s.disruptionType === 'airplane' && Math.random() < 0.015) {
+        paperPlanes.push({
+          x: s.x + 40,
+          y: s.y + 20,
+          vx: (Math.random() - 0.5) * 160,
+          vy: -60 - Math.random() * 60,
+          rot: Math.random() * Math.PI * 2,
+          life: 2.2
+        });
+      }
+    } else {
+      // Attentive, counting down to misbehavior
+      s.timer -= dt;
+      if (s.timer <= 0) {
+        s.state = 'disruptive';
+        s.disruptionType = types[Math.floor(Math.random() * types.length)];
+        sounds.playDisruptionAlert();
+      }
+    }
+  });
+
+  // 4. Update QTE Parameters based on Disruptions
+  // More disruptions = tiny window + blazing fast cursor!
+  const windowPenalty = activeDisruptions * 0.055;
+  qte.targetWidth = Math.max(0.08, 0.32 - windowPenalty);
+  const currentSpeed = (0.75 + activeDisruptions * 0.45);
+
+  qte.cursor += qte.dir * currentSpeed * dt;
+  if (qte.cursor >= 1) {
+    qte.cursor = 1;
+    qte.dir = -1;
+  } else if (qte.cursor <= 0) {
+    qte.cursor = 0;
+    qte.dir = 1;
+  }
+
+  // 5. Update Paper Airplanes
+  for (let i = paperPlanes.length - 1; i >= 0; i--) {
+    const p = paperPlanes[i];
+    p.x += p.vx * dt;
+    p.y += p.vy * dt;
+    p.vy += 40 * dt; // gravity
+    p.life -= dt;
+    if (p.life <= 0) paperPlanes.splice(i, 1);
+  }
+
+  // 6. Update Floating Texts
+  for (let i = floatingTexts.length - 1; i >= 0; i--) {
+    const ft = floatingTexts[i];
+    ft.y += ft.vy * dt;
+    ft.life -= dt * 1.2;
+    if (ft.life <= 0) floatingTexts.splice(i, 1);
+  }
+
+  // 7. Check Victory Condition
+  if (lessonProgress >= WIN_PROGRESS) {
+    endGame(true);
+  }
+
+  // Update UI Elements
+  document.getElementById('lesson-bar').style.width = `${lessonProgress}%`;
+  const disruptElem = document.getElementById('disruption-count');
+  if (activeDisruptions === 0) {
+    disruptElem.innerText = `0 Active (Clean Focus)`;
+    disruptElem.style.color = '#4caf50';
+  } else {
+    disruptElem.innerText = `${activeDisruptions} Active (-${Math.round(windowPenalty * 100)}% Window!)`;
+    disruptElem.style.color = '#ff5252';
+  }
+
+  const mins = Math.floor(gameTime / 60);
+  const secs = Math.floor(gameTime % 60);
+  document.getElementById('timer-display').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+// --- RENDER FUNCTIONS ---
+function drawFloor() {
+  // Wood Planks
+  ctx.fillStyle = '#a2764b';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = '#8b6139';
+  ctx.lineWidth = 2;
+  const plankHeight = 35;
+  for (let y = 0; y < canvas.height; y += plankHeight) {
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(canvas.width, y);
+    ctx.stroke();
+  }
+}
+
+function drawBlackboard() {
+  // Front Wall Base
+  ctx.fillStyle = '#42281a';
+  ctx.fillRect(0, 0, canvas.width, 140);
+
+  // Large Chalkboard
+  ctx.fillStyle = '#5c4033'; // Wooden frame
+  ctx.fillRect(180, 10, 540, 120);
+
+  // Chalkboard Slate
+  ctx.fillStyle = '#1c3b2b';
+  ctx.fillRect(190, 18, 520, 104);
+
+  // Chalk Scribbles / Math formulas background
+  ctx.fillStyle = 'rgba(255,255,255,0.18)';
+  ctx.font = '14px monospace';
+  ctx.fillText('f(x) = ∫ 2x dx = x² + C', 210, 42);
+  ctx.fillText('E = mc²   |   H₂O + CO₂', 210, 68);
+
+  // PODIUM / TEACHING ZONE Indicator
+  ctx.strokeStyle = teacher.isAtBoard ? '#69f0ae' : 'rgba(255, 255, 255, 0.4)';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([6, 6]);
+  ctx.strokeRect(BOARD_ZONE.x, BOARD_ZONE.y, BOARD_ZONE.w, BOARD_ZONE.h);
+  ctx.setLineDash([]);
+
+  // Blackboard QTE Display (Rendered inside chalkboard)
+  const qteX = 380;
+  const qteY = 32;
+  const qteW = 300;
+  const qteH = 36;
+
+  // QTE Track Background
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+  ctx.fillRect(qteX, qteY, qteW, qteH);
+  ctx.strokeStyle = '#ecd5b9';
+  ctx.lineWidth = 1.5;
+  ctx.strokeRect(qteX, qteY, qteW, qteH);
+
+  // QTE Hit Window (Green Zone)
+  const targetPxX = qteX + (qte.targetCenter - qte.targetWidth / 2) * qteW;
+  const targetPxW = qte.targetWidth * qteW;
+  ctx.fillStyle = 'rgba(76, 175, 80, 0.6)';
+  ctx.fillRect(targetPxX, qteY + 2, targetPxW, qteH - 4);
+  ctx.strokeStyle = '#81c784';
+  ctx.strokeRect(targetPxX, qteY + 2, targetPxW, qteH - 4);
+
+  // QTE Needle / Slider
+  const cursorPx = qteX + qte.cursor * qteW;
+  ctx.fillStyle = '#ffeb3b';
+  ctx.fillRect(cursorPx - 3, qteY - 4, 6, qteH + 8);
+
+  // Status prompt
+  ctx.font = 'bold 12px sans-serif';
+  ctx.textAlign = 'center';
+  if (teacher.isAtBoard) {
+    ctx.fillStyle = '#fff';
+    ctx.fillText('PRESS [SPACE] IN ZONE TO TEACH', qteX + qteW / 2, qteY + qteH + 20);
+  } else {
+    ctx.fillStyle = '#ff7043';
+    ctx.fillText('⚠️ RETURN TO BOARD! LESSON DRAINING!', qteX + qteW / 2, qteY + qteH + 20);
+  }
+}
+
+function drawDesksAndStudents() {
+  students.forEach(s => {
+    // Desk Shadow
+    ctx.fillStyle = 'rgba(0,0,0,0.2)';
+    ctx.fillRect(s.x + 6, s.y + 12, s.width, s.height);
+
+    // Desk Wood
+    ctx.fillStyle = '#d7a15c';
+    ctx.fillRect(s.x, s.y, s.width, s.height);
+    ctx.strokeStyle = '#8d5b2d';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(s.x, s.y, s.width, s.height);
+
+    // Notebook & Pencil
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(s.x + 12, s.y + 12, 24, 30);
+    ctx.fillStyle = '#37474f';
+    ctx.fillRect(s.x + 40, s.y + 15, 3, 22);
+
+    // Student Body (Sitting behind desk)
+    const sx = s.x + s.width / 2;
+    const sy = s.y + s.height / 2 + 10;
+
+    // Clothes
+    ctx.fillStyle = (s.state === 'disruptive') ? '#e53935' : '#1e88e5';
+    ctx.beginPath();
+    ctx.arc(sx, sy + 15, 18, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Head
+    ctx.fillStyle = '#ffcc80';
+    ctx.beginPath();
+    ctx.arc(sx, sy - 2, 14, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Hair
+    ctx.fillStyle = s.hairColor;
+    ctx.beginPath();
+    ctx.arc(sx, sy - 7, 14, Math.PI, Math.PI * 2);
+    ctx.fill();
+
+    // Name Label
+    ctx.fillStyle = '#3e2723';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(s.name, sx, s.y + s.height + 34);
+
+    // Disruptions Visual Effects
+    if (s.state === 'disruptive') {
+      // Exclamation highlight over head
+      ctx.fillStyle = '#d50000';
+      ctx.beginPath();
+      ctx.arc(sx + 18, sy - 20, 10, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 13px sans-serif';
+      ctx.fillText('!', sx + 18, sy - 16);
+
+      // Unique action graphic
+      if (s.disruptionType === 'phone') {
+        // Glowing phone screen
+        ctx.fillStyle = '#00e5ff';
+        ctx.fillRect(sx - 10, sy + 4, 12, 18);
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.4)';
+        ctx.beginPath();
+        ctx.arc(sx - 4, sy + 13, 16, 0, Math.PI*2);
+        ctx.fill();
+      } else if (s.disruptionType === 'talking') {
+        // Speech Bubble
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(sx - 45, sy - 40, 52, 20);
+        ctx.fillStyle = '#000';
+        ctx.font = '9px sans-serif';
+        ctx.fillText('Blah blah!', sx - 19, sy - 26);
+      } else if (s.disruptionType === 'sleeping') {
+        // Zzz
+        ctx.fillStyle = '#9c27b0';
+        ctx.font = 'bold 16px sans-serif';
+        ctx.fillText('Z z z', sx - 20, sy - 25);
+      } else if (s.disruptionType === 'airplane') {
+        // Mini plane at desk
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.moveTo(sx + 15, sy);
+        ctx.lineTo(sx + 30, sy - 8);
+        ctx.lineTo(sx + 26, sy + 6);
+        ctx.closePath();
+        ctx.fill();
+      }
+    } else if (s.state === 'disciplined') {
+      // Halo / Angelic calm
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(sx, sy - 22, 12, 4, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+  });
+}
+
+function drawTeacher() {
+  const tx = teacher.x;
+  const ty = teacher.y;
+
+  // Drop Shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.3)';
+  ctx.beginPath();
+  ctx.ellipse(tx, ty + 18, 16, 8, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Teacher Body (Suit/Blazer)
+  ctx.fillStyle = '#263238';
+  ctx.beginPath();
+  ctx.arc(tx, ty + 6, 17, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Red Tie
+  ctx.fillStyle = '#c62828';
+  ctx.fillRect(tx - 3, ty + 4, 6, 14);
+
+  // Head
+  ctx.fillStyle = '#ffe0b2';
+  ctx.beginPath();
+  ctx.arc(tx, ty - 12, 13, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Glasses
+  ctx.strokeStyle = '#212121';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(tx - 9, ty - 15, 7, 5);
+  ctx.strokeRect(tx + 2, ty - 15, 7, 5);
+  ctx.beginPath();
+  ctx.moveTo(tx - 2, ty - 13);
+  ctx.lineTo(tx + 2, ty - 13);
+  ctx.stroke();
+
+  // Teacher pointer stick or clipboard
+  ctx.strokeStyle = '#8d6e63';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(tx + 12, ty + 8);
+  ctx.lineTo(tx + 24, ty - 6);
+  ctx.stroke();
+}
+
+function drawParticles() {
+  // Paper Airplanes
+  paperPlanes.forEach(p => {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(Math.atan2(p.vy, p.vx));
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.moveTo(12, 0);
+    ctx.lineTo(-10, -6);
+    ctx.lineTo(-4, 0);
+    ctx.lineTo(-10, 6);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  });
+
+  // Floating Feedback Texts
+  floatingTexts.forEach(ft => {
+    ctx.fillStyle = ft.color;
+    ctx.font = 'bold 15px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.globalAlpha = Math.max(0, ft.life);
+    ctx.fillText(ft.text, ft.x, ft.y);
+    ctx.globalAlpha = 1.0;
+  });
+}
+
+function render() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawFloor();
+  drawBlackboard();
+  drawDesksAndStudents();
+  drawTeacher();
+  drawParticles();
+}
+
+// --- MAIN LOOP ---
+function gameLoop(now) {
+  const dt = Math.min((now - lastTime) / 1000, 0.1);
+  lastTime = now;
+
+  update(dt);
+  render();
+
+  requestAnimationFrame(gameLoop);
+}
+
+// --- GAME STATE MANAGEMENT ---
+function startGame() {
+  sounds.init();
+  lessonProgress = 0;
+  gameTime = 0;
+  activeDisruptions = 0;
+  teacher.x = 450;
+  teacher.y = 110;
+  teacher.targetX = null;
+  teacher.targetY = null;
+  students.forEach(s => {
+    s.state = 'attentive';
+    s.timer = 3.5 + Math.random() * 4.0;
+  });
+  paperPlanes = [];
+  floatingTexts = [];
+  gameState = 'PLAYING';
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('end-screen').style.display = 'none';
+}
+
+function endGame(won) {
+  gameState = 'GAMEOVER';
+  sounds.playBell();
+  document.getElementById('end-screen').style.display = 'flex';
+  const mins = Math.floor(gameTime / 60);
+  const secs = Math.floor(gameTime % 60);
+  const timeFormatted = `${mins}m ${secs}s`;
+  document.getElementById('end-desc').innerHTML = `You completed the curriculum in <b>${timeFormatted}</b> while keeping the class under control!`;
+}
+
+document.getElementById('start-btn').addEventListener('click', startGame);
+document.getElementById('restart-btn').addEventListener('click', startGame);
+
+// Start Animation Frame Loop
+requestAnimationFrame((time) => {
+  lastTime = time;
+  gameLoop(time);
+});
+</script>
+</body>
+</html>
