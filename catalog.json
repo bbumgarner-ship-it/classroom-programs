@@ -126,6 +126,48 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "0cac46e9cd4f3fbc61c65685269cb16c2f61e50afcdab70652592f389e49fe26"
+    },
+    {
+      "id": "game002-assistant",
+      "title": "Bread Clicker 1.0",
+      "description": "Click through bread stages in a kitchen, buy upgrades, and unlock helper bread bots.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-002-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "0422c8040f552e0fb5ce23ca4899e94b5202319f729f31aaf83fab293cedf39a"
+    },
+    {
+      "id": "game006-assistant",
+      "title": "Planet Clicker",
+      "description": "Build planetary click power, unlock automatic clicks, and rebirth through new worlds.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-006-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "87b1c64f7388bf2270e02c9a9ef6bfffb22ed4ff62016effb85ba09c15517789"
+    },
+    {
+      "id": "game017-assistant",
+      "title": "Car Clicker",
+      "description": "Click your car, add wraps and tires, and keep it clean as your score grows.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-017-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "2b18877bf1dab673623758805be2ac512b872b3f4bc605589256b4f36e314bfe"
     }
   ]
 }
