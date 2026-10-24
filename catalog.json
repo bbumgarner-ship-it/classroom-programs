@@ -28,6 +28,34 @@
       "sha256": "82ffe543cfec2a293045c6ca45a85a26d6771f667cf2411f0b974b6b85de327c",
       "comparisonGroup": "game015",
       "week": 1
+    },
+    {
+      "id": "game007-assistant",
+      "title": "Rebirth Clicker",
+      "description": "Click anywhere, upgrade clicking speed, rebirth for stronger clicks, and customize the background.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-007-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "f10e19bf9fedd84f2c095870296d62f5f204873d22b7719f92f4dccf0b226a89"
+    },
+    {
+      "id": "game010-assistant",
+      "title": "Shark Clicker",
+      "description": "Click a shark that grows more aggressive with each click.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-010-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "b441a6963c1a7049741178cd0b1233f9df42bae98f9e0feab164b002d7eb9c8f"
     }
   ]
 }
