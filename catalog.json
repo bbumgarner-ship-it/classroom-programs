@@ -56,6 +56,76 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "b441a6963c1a7049741178cd0b1233f9df42bae98f9e0feab164b002d7eb9c8f"
+    },
+    {
+      "id": "game014-assistant",
+      "title": "Zombie Clicker",
+      "description": "Build click power, unlock automatic clicks, chase a wandering bonus, and prestige.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-014-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "e73e705a358d9895ab43394934fb443d4f67fa85e1fb8ab2736e7da7972a3f34"
+    },
+    {
+      "id": "game008-assistant",
+      "title": "Chicken Clicker",
+      "description": "Click or press space, build streak multipliers, and unlock automatic clicks.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-008-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "2b08ab8654dc99eccd4f080639ad421e49ce26cc972a6b8a4d2876fa892d55f1"
+    },
+    {
+      "id": "game016-assistant",
+      "title": "Cat Clicker",
+      "description": "Collect cat paws, buy feline upgrades, and customize your cat.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-016-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "8a9820e19522c1f26ad5154ba3d6bee74fcc6b0a603f6d7cfc6853d87b469f7b"
+    },
+    {
+      "id": "game009-assistant",
+      "title": "Verity Clicker",
+      "description": "Stack workers and factories, catch flying golden veritys, and earn falsity coins.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-009-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "3c72a90277919efad49187c3bb766eab938458569a9f3c6f6923f6001434bbee"
+    },
+    {
+      "id": "game011-assistant",
+      "title": "Token Clicker",
+      "description": "Click the bouncing token, purchase double clicks, and rebirth at 1,000 tokens.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-011-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "0cac46e9cd4f3fbc61c65685269cb16c2f61e50afcdab70652592f389e49fe26"
     }
   ]
 }
