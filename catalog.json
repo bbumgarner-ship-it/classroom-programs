@@ -210,6 +210,20 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "ae7eae375b34068b5ad1e7adb2794ea6d9374e23b33a954dbf2608d7f7627b2a"
+    },
+    {
+      "id": "game001-assistant",
+      "title": "Ball Clicker",
+      "description": "Click an expressive ball, buy hit upgrades, and unlock six timed minigames.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-001-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "0d220569049f338bb691da00c50a2e3d9b59626af8466dd8549470660da3a4cf"
     }
   ]
 }
