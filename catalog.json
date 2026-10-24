@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "games": [
+    {
+      "id": "professor-pressure",
+      "title": "Professor Pressure",
+      "description": "An earlier classroom creation. The new workbook games will join the collection as they are generated.",
+      "tags": [
+        "Earlier project"
+      ],
+      "path": "p/7e124f06-74d7-4e49-a0ee-4bf7f6871cad/v1/",
+      "version": 1,
+      "generator": "GEMINI"
+    }
+  ]
+}
