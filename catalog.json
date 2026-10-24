@@ -224,6 +224,48 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "0d220569049f338bb691da00c50a2e3d9b59626af8466dd8549470660da3a4cf"
+    },
+    {
+      "id": "game003-assistant",
+      "title": "Chicken Clicks",
+      "description": "An assistant-built game following the week-one workbook.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-003-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "ca40a7f3abb6f41dde3fcff85eb55fa662736d906d8bcf6cd935fa24ec19a1e7"
+    },
+    {
+      "id": "game004-assistant",
+      "title": "Speed Clicker",
+      "description": "An assistant-built game following the week-one workbook.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-004-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "05f8b23ef592433372be7626288d93cc0b596a2416dd4f348e939237569450d0"
+    },
+    {
+      "id": "game005-assistant",
+      "title": "Helmet Clicker",
+      "description": "An assistant-built game following the week-one workbook.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-005-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "e3d3959b253c1c59875ff58b9a23f5aa187319c6272e78c94585ad7d2fb6dacb"
     }
   ]
 }
