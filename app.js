@@ -63,7 +63,7 @@ async function refreshCatalog() {
     if (!response.ok) throw new Error("Catalog unavailable");
     const catalog = await response.json();
     if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.games)) throw new Error("Invalid catalog");
-    games = catalog.games.filter(g => typeof g.title === "string" && Array.isArray(g.tags) && /^(?:games|p)\/[a-z0-9-]+\/v[1-9][0-9]*\/(?:index\.html)?$/.test(g.path));
+    games = catalog.games.filter(g => typeof g.title === "string" && Array.isArray(g.tags) && /^(?:(?:games|p)\/[a-z0-9-]+\/v[1-9][0-9]*\/(?:index\.html)?|game-[a-z0-9-]+\.html)$/.test(g.path));
     render();
   } catch (_) { if (!games.length) status.textContent = "The collection is updating. Please check back shortly."; }
 }
