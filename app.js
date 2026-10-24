@@ -17,6 +17,7 @@ function launch(game, button) {
   if (button) returnFocus = button;
   const frame = document.createElement("iframe");
   frame.title = game.title + " — game";
+  frame.setAttribute("allowfullscreen", "");
   frame.setAttribute("sandbox", "allow-scripts");
   frame.setAttribute("referrerpolicy", "no-referrer");
   frame.setAttribute("allow", "camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'; usb 'none'; clipboard-read 'none'; clipboard-write 'none'");
@@ -29,7 +30,8 @@ function launch(game, button) {
 }
 function render() {
   const query = document.querySelector("#search").value.toLowerCase().trim();
-  const shown = games.filter(g => [g.title, ...g.tags].join(" ").toLowerCase().includes(query));
+  const weekGames = games.filter(g => (g.week ?? 1) === 1);
+  const shown = weekGames.filter(g => [g.title, ...g.tags].join(" ").toLowerCase().includes(query));
   list.replaceChildren();
   for (const game of shown) {
     const card = text("article", "", "card");
@@ -47,11 +49,20 @@ function render() {
     card.append(art, body);
     list.append(card);
   }
-  status.textContent = shown.length ? `${shown.length} game${shown.length === 1 ? "" : "s"} · new releases appear automatically` : games.length ? "No matching games. Try another title or tag." : "The new collection is being prepared. Games will appear here as they are published.";
+  status.textContent = shown.length ? `${shown.length} game${shown.length === 1 ? "" : "s"} · new releases appear automatically` : weekGames.length ? "No matching games. Try another title or tag." : "The new collection is being prepared. Games will appear here as they are published.";
 }
 document.querySelector("#search").addEventListener("input", render);
 document.querySelector("#restart").addEventListener("click", () => {if (active) launch(active);});
+document.querySelector("#fullscreen").addEventListener("click", async () => {
+  try {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    else await player.requestFullscreen();
+  } catch (_) { player.classList.toggle("expanded-player"); }
+});
+document.addEventListener("fullscreenchange", () => { document.querySelector("#fullscreen").textContent = document.fullscreenElement ? "Exit fullscreen" : "Fullscreen"; });
 document.querySelector("#close").addEventListener("click", () => {
+  if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+  player.classList.remove("expanded-player");
   slot.replaceChildren();
   active = null;
   player.hidden = true;

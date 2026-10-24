@@ -10,7 +10,8 @@
       ],
       "path": "p/7e124f06-74d7-4e49-a0ee-4bf7f6871cad/v1/",
       "version": 1,
-      "generator": "GEMINI"
+      "generator": "GEMINI",
+      "week": 0
     },
     {
       "id": "game015-assistant",
@@ -25,7 +26,8 @@
       "version": 1,
       "generator": "ASSISTANT",
       "sha256": "82ffe543cfec2a293045c6ca45a85a26d6771f667cf2411f0b974b6b85de327c",
-      "comparisonGroup": "game015"
+      "comparisonGroup": "game015",
+      "week": 1
     }
   ]
 }
