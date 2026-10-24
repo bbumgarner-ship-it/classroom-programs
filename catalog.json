@@ -168,6 +168,48 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "2b18877bf1dab673623758805be2ac512b872b3f4bc605589256b4f36e314bfe"
+    },
+    {
+      "id": "game012-assistant",
+      "title": "Clicker de la Fingero Verity",
+      "description": "Smiley-face clicking, a shop, cosmetic colors, rebirths, and save codes.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-012-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "df18ea21c16448f9f54f6adbe54445048353432bcb4ea4a745e26c176020d834"
+    },
+    {
+      "id": "game013-assistant",
+      "title": "Volcano Clicker",
+      "description": "Volcano eruptions, heat and gas upgrades, and science-question boosts.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-013-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "ef57cd671d8bb818b0c8b2f072b80c7a0c899a017e3740b7bb23c533c380dd66"
+    },
+    {
+      "id": "game018-assistant",
+      "title": "Clicking for Money",
+      "description": "Collect pennies, unlock automatic income, mine copper, and work toward a $100,000 goal.",
+      "tags": [
+        "Clicker",
+        "Assistant version"
+      ],
+      "path": "game-018-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "ae7eae375b34068b5ad1e7adb2794ea6d9374e23b33a954dbf2608d7f7627b2a"
     }
   ]
 }
