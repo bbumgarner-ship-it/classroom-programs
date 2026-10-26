@@ -23,9 +23,9 @@
         "Assistant version"
       ],
       "path": "game-015-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
-      "sha256": "82ffe543cfec2a293045c6ca45a85a26d6771f667cf2411f0b974b6b85de327c",
+      "sha256": "fb60543bf2d289172bef781650d0470afe209ecd4a39046d32072441ea490106",
       "comparisonGroup": "game015",
       "week": 1
     },
@@ -38,10 +38,10 @@
         "Assistant version"
       ],
       "path": "game-007-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "f10e19bf9fedd84f2c095870296d62f5f204873d22b7719f92f4dccf0b226a89"
+      "sha256": "cc45c7e385066ef10d1e56949103763b4b98664fdc23e9d65b0ad0c8de776ffd"
     },
     {
       "id": "game010-assistant",
@@ -66,10 +66,10 @@
         "Assistant version"
       ],
       "path": "game-014-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "e73e705a358d9895ab43394934fb443d4f67fa85e1fb8ab2736e7da7972a3f34"
+      "sha256": "77cd48f06abca5831566538f291584b730f50cd88ecfb5203f93f6d084523301"
     },
     {
       "id": "game008-assistant",
@@ -80,10 +80,10 @@
         "Assistant version"
       ],
       "path": "game-008-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "2b08ab8654dc99eccd4f080639ad421e49ce26cc972a6b8a4d2876fa892d55f1"
+      "sha256": "c62578f898bc1dd6229ce0a7893b6eb4e75c86a2310338059ec49bee8cecad82"
     },
     {
       "id": "game016-assistant",
@@ -94,10 +94,10 @@
         "Assistant version"
       ],
       "path": "game-016-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "8a9820e19522c1f26ad5154ba3d6bee74fcc6b0a603f6d7cfc6853d87b469f7b"
+      "sha256": "f70e0c979482effaee7fe3c0a858b5eac40c97ba8c5649d6d71262b688734586"
     },
     {
       "id": "game009-assistant",
@@ -108,10 +108,10 @@
         "Assistant version"
       ],
       "path": "game-009-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "3c72a90277919efad49187c3bb766eab938458569a9f3c6f6923f6001434bbee"
+      "sha256": "1c28c7440c7b06ecfe5fab9dc6c07ae5861a2c5e7f80b5935c76ee9d73e098df"
     },
     {
       "id": "game011-assistant",
@@ -136,10 +136,10 @@
         "Assistant version"
       ],
       "path": "game-002-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "0422c8040f552e0fb5ce23ca4899e94b5202319f729f31aaf83fab293cedf39a"
+      "sha256": "6f714fb4b2207d5398abdc7e0891051763288a9c1d5ab9869b9cd3519347413e"
     },
     {
       "id": "game006-assistant",
@@ -150,10 +150,10 @@
         "Assistant version"
       ],
       "path": "game-006-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "87b1c64f7388bf2270e02c9a9ef6bfffb22ed4ff62016effb85ba09c15517789"
+      "sha256": "5ad8d70a61168b8bc430b328246a07baf8905303798f73b3dbc7753329476957"
     },
     {
       "id": "game017-assistant",
@@ -164,10 +164,10 @@
         "Assistant version"
       ],
       "path": "game-017-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "2b18877bf1dab673623758805be2ac512b872b3f4bc605589256b4f36e314bfe"
+      "sha256": "2796e9c0690f2fa58753e01fd3634a2d8877f7293af64576296d2309888fb0bb"
     },
     {
       "id": "game012-assistant",
@@ -178,10 +178,10 @@
         "Assistant version"
       ],
       "path": "game-012-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "df18ea21c16448f9f54f6adbe54445048353432bcb4ea4a745e26c176020d834"
+      "sha256": "d56e5da60f768c068c45461a1082f22feb7ce27cc63a13bf93ba335d0b725ebf"
     },
     {
       "id": "game013-assistant",
@@ -192,10 +192,10 @@
         "Assistant version"
       ],
       "path": "game-013-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "ef57cd671d8bb818b0c8b2f072b80c7a0c899a017e3740b7bb23c533c380dd66"
+      "sha256": "852607542387664edc5e1c694254a9c89d4821c2d9dd20a38d7ca9e23920e7be"
     },
     {
       "id": "game018-assistant",
@@ -220,10 +220,10 @@
         "Assistant version"
       ],
       "path": "game-001-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "0d220569049f338bb691da00c50a2e3d9b59626af8466dd8549470660da3a4cf"
+      "sha256": "fcb5a79cd29fc1ee32df73ccc18fd287d73a2d7da55c3c3a1944631b98e68685"
     },
     {
       "id": "game003-assistant",
@@ -234,10 +234,10 @@
         "Assistant version"
       ],
       "path": "game-003-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "ca40a7f3abb6f41dde3fcff85eb55fa662736d906d8bcf6cd935fa24ec19a1e7"
+      "sha256": "eb0ea9a77f8302b3f252e9840200ab9b779d3056d98c8fb463aa604f938bd5b2"
     },
     {
       "id": "game004-assistant",
@@ -248,10 +248,10 @@
         "Assistant version"
       ],
       "path": "game-004-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "05f8b23ef592433372be7626288d93cc0b596a2416dd4f348e939237569450d0"
+      "sha256": "655b091f8cdb2e9a65fd7267b9c04105f480ad6480cbccc019e04d8cdb3beef5"
     },
     {
       "id": "game005-assistant",
@@ -262,10 +262,10 @@
         "Assistant version"
       ],
       "path": "game-005-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "e3d3959b253c1c59875ff58b9a23f5aa187319c6272e78c94585ad7d2fb6dacb"
+      "sha256": "9680d991c11510a8b469ed6e087d73083e36c8eb106b8b87faadb3a67961646f"
     }
   ]
 }
