@@ -248,10 +248,10 @@
         "Assistant version"
       ],
       "path": "game-004-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "dcf62fbb78a69ec315fabf60fcf6657a47722311d9c0b4eba69c18220a506316"
+      "sha256": "c0b4e26e74f60a172d04de8fce3e1d0b5e46f080fb2bf6c5097009807051e083"
     },
     {
       "id": "game005-assistant",
