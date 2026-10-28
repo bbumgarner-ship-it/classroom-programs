@@ -16,16 +16,16 @@
     {
       "id": "game015-assistant",
       "title": "Choose Your Clicker Sport \u2014 Assistant Version",
-      "description": "Five sports, unique abilities, upgrades and offline ranked challenges. Assistant-coded comparison of the same workbook.",
+      "description": "Six sports, unique abilities, upgrades and offline ranked challenges. Assistant-coded comparison of the same workbook.",
       "tags": [
         "Clicker",
         "Sports",
         "Assistant version"
       ],
       "path": "game-015-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
-      "sha256": "fb60543bf2d289172bef781650d0470afe209ecd4a39046d32072441ea490106",
+      "sha256": "4ca14f8add44946eb32b814db62b3b4c3a2ca396988393847eece1dac58997a8",
       "comparisonGroup": "game015",
       "week": 1
     },
@@ -38,10 +38,10 @@
         "Assistant version"
       ],
       "path": "game-007-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "9b557b5a484581c7470edf784e24803eb98eba92bdc74b89bd8c4aaeeb836648"
+      "sha256": "a7d72621527d0e2fbb37a67764e9b2bf0fe69fa6afd506b18761a01023182fa2"
     },
     {
       "id": "game010-assistant",
@@ -52,10 +52,10 @@
         "Assistant version"
       ],
       "path": "game-010-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "5e9e43393382ccee7f76d7023e27ab5e708f241067549c38b2521c3be82a5e29"
+      "sha256": "bf67dd98c02bb50f242aa12b271b4851a805fd4f9e72ec1c531ea2e9a5f31b2a"
     },
     {
       "id": "game014-assistant",
@@ -66,10 +66,10 @@
         "Assistant version"
       ],
       "path": "game-014-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "77cd48f06abca5831566538f291584b730f50cd88ecfb5203f93f6d084523301"
+      "sha256": "e0229932389987998bb64685de7e581726a88956672c107e68dd2b9b29b691db"
     },
     {
       "id": "game008-assistant",
@@ -94,10 +94,10 @@
         "Assistant version"
       ],
       "path": "game-016-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "f82bc0b136c5ac8130679ec27fcc3cbd9d81261bc4c076f099c9396de2b6b8f4"
+      "sha256": "50c485ea76ef229f9a165d28f091997cab6058ddb990faed4c8ea87a56bc4f5f"
     },
     {
       "id": "game009-assistant",
@@ -108,10 +108,10 @@
         "Assistant version"
       ],
       "path": "game-009-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "251626f02942f5946f041584c21d25637c72d4ff1c52a94543e2cf1445ac09aa"
+      "sha256": "406adc7a1621262fca10b494e8bc65f47d4932dc7a063a75aeaac9bcbc2ba9e2"
     },
     {
       "id": "game011-assistant",
@@ -136,10 +136,10 @@
         "Assistant version"
       ],
       "path": "game-002-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "6f714fb4b2207d5398abdc7e0891051763288a9c1d5ab9869b9cd3519347413e"
+      "sha256": "f227ce4429a946bb6b030790e00af7ab06bea8525b36b53bc7efc896b01b5c3d"
     },
     {
       "id": "game006-assistant",
@@ -150,10 +150,10 @@
         "Assistant version"
       ],
       "path": "game-006-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "5ad8d70a61168b8bc430b328246a07baf8905303798f73b3dbc7753329476957"
+      "sha256": "97ecdf6de45985fd86e8c2b48d34cc3a8bd5e5f94e6c6fb209ef36c75fee86dd"
     },
     {
       "id": "game017-assistant",
@@ -164,10 +164,10 @@
         "Assistant version"
       ],
       "path": "game-017-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "2796e9c0690f2fa58753e01fd3634a2d8877f7293af64576296d2309888fb0bb"
+      "sha256": "27317a3072ae31c9cb5fb3c902b6b12c23acc9f7c83a42fe0ddea95e278fb6dc"
     },
     {
       "id": "game012-assistant",
@@ -178,10 +178,10 @@
         "Assistant version"
       ],
       "path": "game-012-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "3703c47b7cfc51506064f88c93ddefb41c3c9c257927fc4b4f7591d5bd77129d"
+      "sha256": "ac7d858b3feb9fb8dca8caf599a98e59868d7e30b433d7cc5de9681079ede375"
     },
     {
       "id": "game013-assistant",
@@ -192,10 +192,10 @@
         "Assistant version"
       ],
       "path": "game-013-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "852607542387664edc5e1c694254a9c89d4821c2d9dd20a38d7ca9e23920e7be"
+      "sha256": "5ac5afebc7fa955f64e57a12f458531931ae1cb5beff15f38766cf5b1f1c8dbb"
     },
     {
       "id": "game018-assistant",
@@ -220,10 +220,10 @@
         "Assistant version"
       ],
       "path": "game-001-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "885adc70d567a299eafbd4c341203c439e549180cfe369a14d93196de9e4a1c8"
+      "sha256": "9c49a91b82f7ee2b47881af52d4086e41d229badc4745cf35b3404152d99b609"
     },
     {
       "id": "game003-assistant",
@@ -234,10 +234,10 @@
         "Assistant version"
       ],
       "path": "game-003-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "3edbfc61fae38b507efece7f59cc4a4f0c848860bfe17fd18ba0d031d2f1d363"
+      "sha256": "b95e0dac50763d3f068b3c0cc20f7337d029c2a41d9d1487c6f8cc5dc6903bf7"
     },
     {
       "id": "game004-assistant",
@@ -248,10 +248,10 @@
         "Assistant version"
       ],
       "path": "game-004-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "655b091f8cdb2e9a65fd7267b9c04105f480ad6480cbccc019e04d8cdb3beef5"
+      "sha256": "dcf62fbb78a69ec315fabf60fcf6657a47722311d9c0b4eba69c18220a506316"
     },
     {
       "id": "game005-assistant",
@@ -262,10 +262,10 @@
         "Assistant version"
       ],
       "path": "game-005-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 1,
-      "sha256": "9680d991c11510a8b469ed6e087d73083e36c8eb106b8b87faadb3a67961646f"
+      "sha256": "e195520714ce6371f96da5ea749ff36b920d4f438b57932f53d8cf76e334b6d0"
     }
   ]
 }
