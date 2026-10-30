@@ -14,6 +14,21 @@
       "week": 0
     },
     {
+      "id": "candy-inc",
+      "title": "Candy Inc. \u2014 A Halloween Empire",
+      "description": "Knock on doors, upgrade your candy storage and costumes, and hire a crew to build a nationwide Halloween candy empire.",
+      "tags": [
+        "Clicker",
+        "Halloween",
+        "Class example"
+      ],
+      "path": "game-candy-inc-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 1,
+      "sha256": "8a5844be7d807474ebe370d5695fd36eb28c4c7a9d11b8325a316540c5004155"
+    },
+    {
       "id": "game015-assistant",
       "title": "Choose Your Clicker Sport \u2014 Assistant Version",
       "description": "Six sports, unique abilities, upgrades and offline ranked challenges. Assistant-coded comparison of the same workbook.",
