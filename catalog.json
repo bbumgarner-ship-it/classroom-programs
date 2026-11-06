@@ -281,6 +281,21 @@
       "generator": "ASSISTANT",
       "week": 1,
       "sha256": "e195520714ce6371f96da5ea749ff36b920d4f438b57932f53d8cf76e334b6d0"
+    },
+    {
+      "id": "fungal-war-opus",
+      "title": "Fungal War",
+      "description": "Chess meets tower defense. Every capture starts a fungal battle, and the first check wins. Play the tutorial, challenge a bot, or share a computer with a friend.",
+      "tags": [
+        "Chess",
+        "Tower defense",
+        "Strategy"
+      ],
+      "path": "game-fungal-war-opus-v1.html",
+      "version": 1,
+      "generator": "CLAUDE OPUS",
+      "week": 2,
+      "sha256": "4e597097f7b2c82fe86a7c90f7d9265ccbaa65cf9c8ef9ff2c099348681e3be5"
     }
   ]
 }
