@@ -298,6 +298,58 @@
       "sha256": "4e597097f7b2c82fe86a7c90f7d9265ccbaa65cf9c8ef9ff2c099348681e3be5"
     },
     {
+      "title": "Fungal War",
+      "description": "A chess rivalry where every capture becomes a fungal tower-defense duel. Build a colony, send spores, and land the first check.",
+      "tags": [
+        "tower-defense",
+        "chess",
+        "strategy",
+        "local-multiplayer",
+        "Featured"
+      ],
+      "id": "td12-assistant",
+      "path": "game-td12-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "039050fd1d108ef79a89e377959e8d46d04396854e4ec5e5dfe5acec9c6ceccd"
+    },
+    {
+      "title": "Retro Roblox! Tower Defence",
+      "description": "Defend a classic Happy Home across five lanes with six upgradeable block heroes, collectible Tix, zombies, aliens and a hidden chaotic red defender.",
+      "tags": [
+        "tower-defense",
+        "retro",
+        "lanes",
+        "survival",
+        "upgrades",
+        "Featured"
+      ],
+      "id": "td17-assistant",
+      "path": "game-td17-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "90a95d1efb606d510bf350509b11edf9d2cdc2d7a21ee058aa48079ed87ad4a9"
+    },
+    {
+      "title": "Story Mode Coderot Phighting",
+      "description": "Defend the tower with living weapon phighters. Confirm placements, upgrade your team and survive coderot waves as fallen defenders become infected.",
+      "tags": [
+        "tower-defense",
+        "coderot",
+        "strategy",
+        "upgrades",
+        "Featured"
+      ],
+      "id": "td18-assistant",
+      "path": "game-td18-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "f210cd9251ea9684e51efff5b624a985bcf0ec6defbf7f6ebf2202a797b0db60"
+    },
+    {
       "title": "Snowbound Towers",
       "description": "Harvest snowy forests, collect meat and wood, and build increasingly powerful towers to survive.",
       "tags": [
@@ -448,22 +500,6 @@
       "sha256": "696949e762603a42d728442a8be8e3372f8a92468c5b0b58c5c0c4edec80ebb6"
     },
     {
-      "title": "Fungal War",
-      "description": "A chess rivalry where every capture becomes a fungal tower-defense duel. Build a colony, send spores, and land the first check.",
-      "tags": [
-        "tower-defense",
-        "chess",
-        "strategy",
-        "local-multiplayer"
-      ],
-      "id": "td12-assistant",
-      "path": "game-td12-assistant-v1.html",
-      "version": 1,
-      "generator": "ASSISTANT",
-      "week": 2,
-      "sha256": "8c030cf7a60a0499e0fe2d6b05ed9d67d8d2a3f0b6da50b8a0ff650f7a265bc6"
-    },
-    {
       "title": "Chimps vs Gorillas",
       "description": "Command stick-throwing chimps, rock throwers and boulder catapults across a 100-level forest campaign. Save your progress with a portable code.",
       "tags": [
@@ -526,39 +562,6 @@
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "4772a8f26292c918086f86e510384d7329d398bff0a1d3caa948592f70188551"
-    },
-    {
-      "title": "Retro Roblox! Tower Defence",
-      "description": "Defend a classic Happy Home across five lanes with six upgradeable block heroes, collectible Tix, zombies, aliens and a hidden chaotic red defender.",
-      "tags": [
-        "tower-defense",
-        "retro",
-        "lanes",
-        "survival",
-        "upgrades"
-      ],
-      "id": "td17-assistant",
-      "path": "game-td17-assistant-v1.html",
-      "version": 1,
-      "generator": "ASSISTANT",
-      "week": 2,
-      "sha256": "2946f79843248e1c413999762638b747a44d347cea6a00976438a948c243ce41"
-    },
-    {
-      "title": "Story Mode Coderot Phighting",
-      "description": "Defend the tower with living weapon phighters. Confirm placements, upgrade your team and survive coderot waves as fallen defenders become infected.",
-      "tags": [
-        "tower-defense",
-        "coderot",
-        "strategy",
-        "upgrades"
-      ],
-      "id": "td18-assistant",
-      "path": "game-td18-assistant-v1.html",
-      "version": 1,
-      "generator": "ASSISTANT",
-      "week": 2,
-      "sha256": "052918b403478585f096db29ee366061b9e160f7935329e5cfd68299c44efe86"
     }
   ]
 }
