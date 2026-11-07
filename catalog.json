@@ -296,6 +296,269 @@
       "generator": "CLAUDE OPUS",
       "week": 2,
       "sha256": "4e597097f7b2c82fe86a7c90f7d9265ccbaa65cf9c8ef9ff2c099348681e3be5"
+    },
+    {
+      "title": "Snowbound Towers",
+      "description": "Harvest snowy forests, collect meat and wood, and build increasingly powerful towers to survive.",
+      "tags": [
+        "tower-defense",
+        "survival",
+        "resource-management"
+      ],
+      "id": "td01-assistant",
+      "path": "game-td01-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "58ecbbda418ac8f9562cf2024ddeeb22e2a0cdb6ea7e6a8df8a12063d7145b90"
+    },
+    {
+      "title": "Stick War Legacy",
+      "description": "Mine gold and crystals, train a stick-figure army, and command it to destroy the opposing statue.",
+      "tags": [
+        "strategy",
+        "army",
+        "tower-defense"
+      ],
+      "id": "td02-assistant",
+      "path": "game-td02-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "34b4cf8bd4bebf1a520de93c6323ef6b48e404f11d295e19453cc7335b04d43c"
+    },
+    {
+      "title": "Verity vs Code-Rot Burgers",
+      "description": "Collect falling burgers and combine Verity fighters to hold off code-rotted burger waves.",
+      "tags": [
+        "tower-defense",
+        "food",
+        "upgrades"
+      ],
+      "id": "td03-assistant",
+      "path": "game-td03-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "6dd848de7baaae979af685163f11e8dae72c18af63185e9a88b8a78fbecfa204"
+    },
+    {
+      "title": "Characters vs Zombies",
+      "description": "Defend a forest home with fifty ability-based fighters, ghost detection, upgrades and endless zombie waves.",
+      "tags": [
+        "tower-defense",
+        "zombies",
+        "endless"
+      ],
+      "id": "td04-assistant",
+      "path": "game-td04-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "2934134e92f6c9b8604ee055c5b0580c58d4816ea3d2d0bea6d0b821bb946a43"
+    },
+    {
+      "title": "Monster School Supplies vs Students",
+      "description": "Defend the classroom, then answer math, science and ELA questions to fund your next wave.",
+      "tags": [
+        "tower-defense",
+        "education",
+        "quiz"
+      ],
+      "id": "td05-assistant",
+      "path": "game-td05-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "09cc119b09e72aa395e7980709694985f9123d6774b5e79275fd9e074805b97e"
+    },
+    {
+      "title": "Zombies vs Humanity",
+      "description": "Roam a ruined retro city, wield medicine and light sabers, and build defenders against stronger zombie waves.",
+      "tags": [
+        "tower-defense",
+        "action",
+        "zombies"
+      ],
+      "id": "td06-assistant",
+      "path": "game-td06-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "a155564065f6b10dbd78826a78af929888a951c5e7a993c1a43f1b8d0bfed142"
+    },
+    {
+      "title": "Stick Man Defense",
+      "description": "Build a stick-figure army across five biomes, with branching upgrades and dangerous boss waves.",
+      "tags": [
+        "Tower Defense",
+        "Strategy",
+        "Week 2"
+      ],
+      "id": "td07-assistant",
+      "path": "game-td07-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "1032a6beae5b92e2b7fca77069def8b5d815cc3cc7eb17e3b2e881ebe955061e"
+    },
+    {
+      "title": "Zombie Row Defense",
+      "description": "Defend five rows with ray guns and lifesavers, upgrade your blue squad, and earn match rewards.",
+      "tags": [
+        "Tower Defense",
+        "Strategy",
+        "Week 2"
+      ],
+      "id": "td08-assistant",
+      "path": "game-td08-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "5bf432042b349a53f2dd66474d0b1935928fbe6cf4ecb0c6ef0da5cc7d647e72"
+    },
+    {
+      "title": "Tower Defence Fleas",
+      "description": "Protect itchy cats with repellent, capture fleas in vet nets, and grow your care supplies.",
+      "tags": [
+        "Tower Defense",
+        "Strategy",
+        "Week 2"
+      ],
+      "id": "td10-assistant",
+      "path": "game-td10-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "6e714a204c3cab307c05e608d6c65496fa137d3475f25921a1d6f1693e004bee"
+    },
+    {
+      "title": "PVZ PT2: The First",
+      "description": "Collect falling sun and assemble a plant defense against endless zombie waves.",
+      "tags": [
+        "Tower Defense",
+        "Strategy",
+        "Week 2"
+      ],
+      "id": "td11-assistant",
+      "path": "game-td11-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "696949e762603a42d728442a8be8e3372f8a92468c5b0b58c5c0c4edec80ebb6"
+    },
+    {
+      "title": "Fungal War",
+      "description": "A chess rivalry where every capture becomes a fungal tower-defense duel. Build a colony, send spores, and land the first check.",
+      "tags": [
+        "tower-defense",
+        "chess",
+        "strategy",
+        "local-multiplayer"
+      ],
+      "id": "td12-assistant",
+      "path": "game-td12-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "8c030cf7a60a0499e0fe2d6b05ed9d67d8d2a3f0b6da50b8a0ff650f7a265bc6"
+    },
+    {
+      "title": "Chimps vs Gorillas",
+      "description": "Command stick-throwing chimps, rock throwers and boulder catapults across a 100-level forest campaign. Save your progress with a portable code.",
+      "tags": [
+        "tower-defense",
+        "chimps",
+        "strategy",
+        "upgrades"
+      ],
+      "id": "td13-assistant",
+      "path": "game-td13-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "a35be913515b389821b0b8639ec9f5ba437b583f13b4d4406d3412a98b417ebe"
+    },
+    {
+      "title": "Bread Defense Tower",
+      "description": "Protect a kitchen bread bag from moldy bread using single and double mold-spray towers, bread-tree income and upgrades.",
+      "tags": [
+        "tower-defense",
+        "bread",
+        "strategy",
+        "upgrades"
+      ],
+      "id": "td14-assistant",
+      "path": "game-td14-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "aa73c3315c70e721221d15b6cb22d17564da4dd4004abf854cfe10e68b0cafa0"
+    },
+    {
+      "title": "Shoe Defense",
+      "description": "Use soda, song and slime to stop designer shoes on a looping grass road. Purple rain doubles rewards and Bleood arrives every fifth wave.",
+      "tags": [
+        "tower-defense",
+        "shoes",
+        "strategy",
+        "upgrades"
+      ],
+      "id": "td15-assistant",
+      "path": "game-td15-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "e64224e348a5e8c4ade63387c557018742b78e4c1000e48c6606533e0f9bf045"
+    },
+    {
+      "title": "Car Tower Defense",
+      "description": "Clean dirty cars with pressure-washer towers before they reach the garage. Earn cash, avoid the junkyard and customize paint, rims and exhaust.",
+      "tags": [
+        "tower-defense",
+        "cars",
+        "strategy",
+        "upgrades"
+      ],
+      "id": "td16-assistant",
+      "path": "game-td16-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "4772a8f26292c918086f86e510384d7329d398bff0a1d3caa948592f70188551"
+    },
+    {
+      "title": "Retro Roblox! Tower Defence",
+      "description": "Defend a classic Happy Home across five lanes with six upgradeable block heroes, collectible Tix, zombies, aliens and a hidden chaotic red defender.",
+      "tags": [
+        "tower-defense",
+        "retro",
+        "lanes",
+        "survival",
+        "upgrades"
+      ],
+      "id": "td17-assistant",
+      "path": "game-td17-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "2946f79843248e1c413999762638b747a44d347cea6a00976438a948c243ce41"
+    },
+    {
+      "title": "Story Mode Coderot Phighting",
+      "description": "Defend the tower with living weapon phighters. Confirm placements, upgrade your team and survive coderot waves as fallen defenders become infected.",
+      "tags": [
+        "tower-defense",
+        "coderot",
+        "strategy",
+        "upgrades"
+      ],
+      "id": "td18-assistant",
+      "path": "game-td18-assistant-v1.html",
+      "version": 1,
+      "generator": "ASSISTANT",
+      "week": 2,
+      "sha256": "052918b403478585f096db29ee366061b9e160f7935329e5cfd68299c44efe86"
     }
   ]
 }

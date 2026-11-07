@@ -6,13 +6,14 @@ const slot = document.querySelector("#frame-slot");
 let games = [];
 let active = null;
 let returnFocus = null;
-let selectedWeek = 1;
+const requestedWeek = /^#week-([1-9][0-9]*)$/.exec(window.location.hash);
+let selectedWeek = requestedWeek ? Number(requestedWeek[1]) : 1;
 const weekTabs = document.querySelector(".week-tabs");
 for (const [index, button] of [...weekTabs.querySelectorAll("button")].entries()) {
   button.dataset.week = String(index + 1);
 }
 function weekLabel(week, heading = false) {
-  return week === 1 ? `Week one ${heading ? "·" : "—"} Clicker games` : `Week ${week}`;
+  return week === 1 ? `Week one ${heading ? "·" : "—"} Clicker games` : week === 2 ? `Week 2 ${heading ? "·" : "—"} Tower defense` : `Week ${week}`;
 }
 function renderWeeks() {
   const available = new Set(games.filter(g => g.week > 0).map(g => g.week));
@@ -28,6 +29,7 @@ function renderWeeks() {
   for (const button of weekTabs.querySelectorAll("button")) {
     const week = Number(button.dataset.week);
     button.disabled = !available.has(week);
+    button.textContent = weekLabel(week);
     button.classList.toggle("active", week === selectedWeek);
     if (week === selectedWeek) button.setAttribute("aria-current", "page");
     else button.removeAttribute("aria-current");
@@ -76,7 +78,15 @@ function render() {
     button.type = "button";
     button.append(text("span", "Play game"), text("span", "↗"));
     button.addEventListener("click", () => launch(game, button));
-    body.append(tags, button);
+    const standalone = text("a", "Open in new tab", "standalone-link");
+    const standaloneURL = new URL(game.path, document.baseURI);
+    standaloneURL.searchParams.set("build", game.sha256 || String(game.version || 1));
+    standalone.href = standaloneURL.href;
+    standalone.target = "_blank";
+    standalone.title = "Standalone play supports browser saves and dialogs when the game provides them.";
+    standalone.rel = "noopener noreferrer";
+    standalone.style.cssText = "display:block;margin-top:12px;font-size:.82rem;color:inherit;text-decoration:underline;text-underline-offset:3px";
+    body.append(tags, button, standalone);
     card.append(art, body);
     list.append(card);
   }
@@ -87,6 +97,7 @@ weekTabs.addEventListener("click", event => {
   const button = event.target.closest("button[data-week]");
   if (!button || button.disabled || !weekTabs.contains(button)) return;
   selectedWeek = Number(button.dataset.week);
+  history.replaceState(null, "", "#week-" + selectedWeek);
   document.querySelector("#search").value = "";
   closePlayer(false);
   render();
