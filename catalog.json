@@ -309,10 +309,10 @@
       ],
       "id": "td12-assistant",
       "path": "game-td12-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "b6a366dc4014415befeff22f59e10ff8528cf5a5c24cfe08717a7bb135344f4e"
+      "sha256": "284d6e1efa28253ab2a09dffee76f6043c498fb8dec64e1e0df049b8663d32ce"
     },
     {
       "title": "Retro Roblox! Tower Defence",
