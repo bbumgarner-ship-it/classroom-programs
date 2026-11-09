@@ -309,10 +309,10 @@
       ],
       "id": "td12-assistant",
       "path": "game-td12-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "039050fd1d108ef79a89e377959e8d46d04396854e4ec5e5dfe5acec9c6ceccd"
+      "sha256": "b6a366dc4014415befeff22f59e10ff8528cf5a5c24cfe08717a7bb135344f4e"
     },
     {
       "title": "Retro Roblox! Tower Defence",
@@ -327,10 +327,10 @@
       ],
       "id": "td17-assistant",
       "path": "game-td17-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "90a95d1efb606d510bf350509b11edf9d2cdc2d7a21ee058aa48079ed87ad4a9"
+      "sha256": "3aa7d72025f2bdec793c9d8a108748c063abb2fce3297ced241a46d798daaf61"
     },
     {
       "title": "Story Mode Coderot Phighting",
@@ -344,10 +344,10 @@
       ],
       "id": "td18-assistant",
       "path": "game-td18-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "f210cd9251ea9684e51efff5b624a985bcf0ec6defbf7f6ebf2202a797b0db60"
+      "sha256": "48cfba8398bcca87e26bd026d545e92d15bdba3c1f5d02e5f758d76eedc6ee4d"
     },
     {
       "title": "Snowbound Towers",
@@ -359,10 +359,10 @@
       ],
       "id": "td01-assistant",
       "path": "game-td01-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "58ecbbda418ac8f9562cf2024ddeeb22e2a0cdb6ea7e6a8df8a12063d7145b90"
+      "sha256": "224e9a07845fe0b6ea78016c0c3e329906fcd9a9827c7f5b48ca7dd460c727b9"
     },
     {
       "title": "Stick War Legacy",
@@ -374,10 +374,10 @@
       ],
       "id": "td02-assistant",
       "path": "game-td02-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "34b4cf8bd4bebf1a520de93c6323ef6b48e404f11d295e19453cc7335b04d43c"
+      "sha256": "5bab1c34388d098b7740a1378aef1229d6ecd4ba9dd1a65ea2435547b15b9f3f"
     },
     {
       "title": "Verity vs Code-Rot Burgers",
@@ -404,10 +404,10 @@
       ],
       "id": "td04-assistant",
       "path": "game-td04-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "2934134e92f6c9b8604ee055c5b0580c58d4816ea3d2d0bea6d0b821bb946a43"
+      "sha256": "372800da1cb4144536f6a1c17c454775d0f237ab9a196343bbace747603338d6"
     },
     {
       "title": "Monster School Supplies vs Students",
@@ -419,10 +419,10 @@
       ],
       "id": "td05-assistant",
       "path": "game-td05-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "09cc119b09e72aa395e7980709694985f9123d6774b5e79275fd9e074805b97e"
+      "sha256": "53f0bc8f1458436760631fcf23e07fbd049a06ded48b7833d4a3caa82a5e7501"
     },
     {
       "title": "Zombies vs Humanity",
@@ -449,10 +449,10 @@
       ],
       "id": "td07-assistant",
       "path": "game-td07-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "1032a6beae5b92e2b7fca77069def8b5d815cc3cc7eb17e3b2e881ebe955061e"
+      "sha256": "de80c3217197b322b2f601bf4e7d46ff466c89c18a9f3973838dae3eaa0e2aa5"
     },
     {
       "title": "Zombie Row Defense",
@@ -494,10 +494,10 @@
       ],
       "id": "td11-assistant",
       "path": "game-td11-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "696949e762603a42d728442a8be8e3372f8a92468c5b0b58c5c0c4edec80ebb6"
+      "sha256": "5c02e2bdb53e82ac7b9b5fe65740eebed99cb315d99be19781ff319a202ab9b4"
     },
     {
       "title": "Chimps vs Gorillas",
@@ -526,10 +526,10 @@
       ],
       "id": "td14-assistant",
       "path": "game-td14-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "aa73c3315c70e721221d15b6cb22d17564da4dd4004abf854cfe10e68b0cafa0"
+      "sha256": "21bb227ae9a9a2fd6a0fa3ec9e4dfbc25f4eeb693d36acf05b20385cfce28583"
     },
     {
       "title": "Shoe Defense",
@@ -542,10 +542,10 @@
       ],
       "id": "td15-assistant",
       "path": "game-td15-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "e64224e348a5e8c4ade63387c557018742b78e4c1000e48c6606533e0f9bf045"
+      "sha256": "9637761c8f145c956ab8214a8711c77fd9fdf5f0858fa729579fc01fc3db3bab"
     },
     {
       "title": "Car Tower Defense",
@@ -558,10 +558,10 @@
       ],
       "id": "td16-assistant",
       "path": "game-td16-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
-      "sha256": "4772a8f26292c918086f86e510384d7329d398bff0a1d3caa948592f70188551"
+      "sha256": "682de8a7318942a6ff1a21a0693894474f25f9794f0a44bebf4186dca3dd5a6b"
     }
   ]
 }
