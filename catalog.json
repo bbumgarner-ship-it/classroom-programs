@@ -309,7 +309,7 @@
       ],
       "id": "td12-assistant",
       "path": "game-td12-assistant-v1.html",
-      "version": 3,
+      "version": 4,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "284d6e1efa28253ab2a09dffee76f6043c498fb8dec64e1e0df049b8663d32ce"
@@ -327,7 +327,7 @@
       ],
       "id": "td17-assistant",
       "path": "game-td17-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "3aa7d72025f2bdec793c9d8a108748c063abb2fce3297ced241a46d798daaf61"
@@ -344,7 +344,7 @@
       ],
       "id": "td18-assistant",
       "path": "game-td18-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "48cfba8398bcca87e26bd026d545e92d15bdba3c1f5d02e5f758d76eedc6ee4d"
@@ -389,7 +389,7 @@
       ],
       "id": "td03-assistant",
       "path": "game-td03-assistant-v1.html",
-      "version": 1,
+      "version": 2,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "6dd848de7baaae979af685163f11e8dae72c18af63185e9a88b8a78fbecfa204"
@@ -404,7 +404,7 @@
       ],
       "id": "td04-assistant",
       "path": "game-td04-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "372800da1cb4144536f6a1c17c454775d0f237ab9a196343bbace747603338d6"
@@ -419,7 +419,7 @@
       ],
       "id": "td05-assistant",
       "path": "game-td05-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "53f0bc8f1458436760631fcf23e07fbd049a06ded48b7833d4a3caa82a5e7501"
@@ -449,7 +449,7 @@
       ],
       "id": "td07-assistant",
       "path": "game-td07-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "de80c3217197b322b2f601bf4e7d46ff466c89c18a9f3973838dae3eaa0e2aa5"
@@ -494,7 +494,7 @@
       ],
       "id": "td11-assistant",
       "path": "game-td11-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "5c02e2bdb53e82ac7b9b5fe65740eebed99cb315d99be19781ff319a202ab9b4"
@@ -526,7 +526,7 @@
       ],
       "id": "td14-assistant",
       "path": "game-td14-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "21bb227ae9a9a2fd6a0fa3ec9e4dfbc25f4eeb693d36acf05b20385cfce28583"
@@ -542,7 +542,7 @@
       ],
       "id": "td15-assistant",
       "path": "game-td15-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "9637761c8f145c956ab8214a8711c77fd9fdf5f0858fa729579fc01fc3db3bab"
@@ -558,7 +558,7 @@
       ],
       "id": "td16-assistant",
       "path": "game-td16-assistant-v1.html",
-      "version": 2,
+      "version": 3,
       "generator": "ASSISTANT",
       "week": 2,
       "sha256": "682de8a7318942a6ff1a21a0693894474f25f9794f0a44bebf4186dca3dd5a6b"
